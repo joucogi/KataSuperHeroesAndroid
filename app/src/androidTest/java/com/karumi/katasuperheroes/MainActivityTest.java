@@ -91,8 +91,6 @@ import static org.mockito.Mockito.when;
 
     startActivity();
 
-    Collections.shuffle(superHeroes);
-
     RecyclerViewInteraction.<SuperHero>onRecyclerView(withId(R.id.recycler_view))
         .withItems(superHeroes)
         .check(new RecyclerViewInteraction.ItemViewAssertion<SuperHero>() {
