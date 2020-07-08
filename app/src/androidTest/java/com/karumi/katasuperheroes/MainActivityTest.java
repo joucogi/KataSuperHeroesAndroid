@@ -35,6 +35,7 @@ import it.cosenonjaviste.daggermock.DaggerMockRule;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -89,6 +90,8 @@ import static org.mockito.Mockito.when;
     List<SuperHero> superHeroes = givenThereAreSomeSuperHeroes(ANY_NUMBER_OF_SUPER_HEROES);
 
     startActivity();
+
+    Collections.shuffle(superHeroes);
 
     RecyclerViewInteraction.<SuperHero>onRecyclerView(withId(R.id.recycler_view))
         .withItems(superHeroes)
